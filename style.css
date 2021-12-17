@@ -1,0 +1,254 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dela+Gothic+One&display=swap');
+
+:root{
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Dela Gothic One', cursive; 
+        /*font-family: 'Dela Gothic One', cursive; */
+
+}
+body{
+
+    background-color: rgb(0, 0, 0);
+}
+
+.app{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: move 1s linear;
+   
+  
+}
+
+
+.player{
+    background-color: #FFF;
+    padding: 20PX 50PX;
+    width: 414PX;
+    max-width: 100%;
+    border-radius: 16PX;
+    /*box-shadow: 0 3PX 6PX rgba(0, 0, 0, 0.1);*/
+    box-shadow:0 0PX 10PX rgb(255, 255, 255);
+    animation: move 1s ease-in-out;
+    transition: 0.3s;
+   
+}
+@keyframes move {
+    0%{
+        position: relative;
+            transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+video{
+    position: relative;
+    margin:  0 auto;
+    border-radius: 5PX;
+    width: 300PX;
+    height: 300PX;
+    background-size: cover;
+    object-fit: fill;
+    background-color: rgb(156, 70, 63);
+    box-shadow: 0 3PX 12PX rgba(0, 0, 0, 0.3);
+    max-width: 100%;
+    margin-bottom:50PX ;
+    background-image: url('./images/eminem.jpg');
+    background-position: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+video::after{
+    content:'';
+    padding-top: 100%;
+    display: block;
+}
+
+.vedeo::before{
+    content: '';
+    position: absolute;
+    top: -5PX;
+    left: -5PX;
+    right: -5PX;
+    bottom: -5PX;
+    border: 5PX solid black;
+    border-radius: 50%;
+    box-shadow: 0 5PX 10PX black;
+}
+*::-webkit-media-controls-panel{
+    display: none !important;
+}
+
+.change-volume{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    position: relative;
+    bottom: 50PX;
+}
+
+.change-volume button{
+border: none;
+outline: none;
+perspective: none;
+margin-left:0 30PX;
+cursor: pointer;
+margin: 5PX;
+float: left;
+border-radius: 50%;
+background-color: black;
+width: 40PX;
+height: 40PX;
+transition: all .2s ease-in-out;
+}
+.change-volume button:hover{
+    transform: scale(1.1);
+}
+    
+.change-volume button i{
+color: #888;
+}
+    
+       
+.change-vetess{
+    display: flex;
+    justify-content: space-around;
+}
+
+.change-vetess button{
+    border: none;
+    outline: none;
+    perspective: none;
+    margin-left: 10PX;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    }
+    .change-vetess button:hover{
+        transform: scale(1.1);
+
+        }
+    
+.change-vetess i{
+    cursor: pointer;
+font-size: 20PX;}
+    
+
+
+
+
+
+.song-info{
+    text-align: center;
+    margin-bottom: 30PX;
+    border-bottom: 3PX solid black;
+}
+
+.song-info h2{
+font-weight: 600;
+font-size: 24PX;
+color: #313131;
+}
+
+.song-info h3{
+    font-weight: 400;
+    font-size: 16PX;
+    color: #888;
+   
+    margin-bottom: 5PX;
+    overflow: hidden;
+}
+
+.player-controls{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30PX;
+
+}
+.player-controls .play{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #EEE;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    width: 75PX;
+    height: 75PX;
+    border: none;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+    margin: 0 30PX;
+    box-shadow: 0 6PX 12PX black;
+    transition: all 0.5 ease;
+}
+
+.player-controls .play:hover{
+    box-shadow: 0 20PX 30PX black;
+   transform: translateY(-10PX);
+   transition: all 0.8s ease-in-out;
+}
+.player-controls .skip-btn{
+  border: none;
+  outline: none;
+  appearance: none;
+  width: 50PX;
+  height: 50PX;
+  background-color: transparent;
+  cursor: pointer;
+  color: #ccc;
+}
+.player-controls .skip-btn:hover:first-of-type{
+    background-color: #888;
+    color: white;
+    border-radius: 50%;
+    transition:0.5s ease-in-out;
+    margin-right: 10PX;
+}
+.player-controls .skip-btn:hover:last-of-type{
+    background-color: #888;
+    color: white;
+    border-radius: 50%;
+    transition: 0.5s ease-in-out;
+    margin-left: 10PX;
+}
+
+.next-up p{
+    color: #888;
+    text-align: center;
+    font-size: 16PX;
+    font-weight: 500;
+}
+
+.next-up span{
+    font-weight: 400;
+    font-style: italic;
+}
+
+
+@media (max-width :400) {
+    .player{
+        min-height: 100vh;
+        border-radius: 0;
+        padding: 50PX 25PX;
+    }
+}
+
+
+
+
+
+
